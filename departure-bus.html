@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joining Instruction</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/style-room.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+        <div class="panel">
+          <div class="panel-heading">
+            <button class="btn btn-default" onclick="home()" title="Reload">Back</button>
+            <div class="row">
+              <div class="col col-sm-3 col-xs-12">
+                <h4 class="title">Bus <span>Kedatangan</span></h4>
+              </div>
+              <div class="col-sm-9 col-xs-12 text-right">
+                <div class="btn_group">
+                  <input type="text" class="form-control" id="nameForm" placeholder="Search">
+                  <button class="btn btn-default" onclick="nameSearch()" title="Reload"><i class="fa fa-sync-alt"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-body table-responsive">
+            <p class="table-info">* Scroll tabel ke kiri untuk melihat semua informasi</p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Nama</th>
+                  <th>Nomor Bus</th>
+                </tr>
+              </thead>
+              <tbody id="datas">
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    let table = document.getElementById("datas");
+    let tableRows ="";
+    table.innerHTML="";
+
+    axios.get('https://anthonygunardi.com/api-poin-peserta/v1/departure_buses/1')
+    .then(result => {
+      let resultData = result.data;
+      resultData.forEach(ele=>{
+        tableRows +='<tr>';
+        tableRows +=
+          '<td>' + ele.nama+'</td>' +'<td>'+ ele.no_bus + '</td>'
+        tableRows +='</tr>'
+      })
+      table.innerHTML += tableRows;
+    })
+    .catch(err => alert('Database error.'))
+
+    function home() {
+      window.location.href = 'index.html';
+    }
+
+    function nameSearch() {
+      let nameForm = document.getElementById('nameForm');
+      localStorage.setItem('nameForm',nameForm.value);
+      window.location.href = 'departure-bus-search.html';
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+  <link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-640x920.png"> -->
+  <title>Joining Instruction</title>
+  <link rel="stylesheet" href="css/swiper.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,900" rel="stylesheet">
+</head>
+
+<body id="mobile_wrap">
+
+  <div class="panel-overlay"></div>
+  <div class="views">
+    <div class="view view-main">
+      <div class="pages">
+        <div data-page="index" class="page homepage">
+          <div class="page-content">
+            <div class="navbarpages">
+              <div class="navbar_center_logo">
+                <div class="logo_text"><a href="index.html"><img src="images/cia-white.png"></a></div>
+              </div>
+            </div>
+
+            <!-- Slider -->
+            <div class="swiper-container slidertoolbar">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image:url(images/background.jpg);">
+                  <div class="slider_trans">
+                    <!-- <div class="slider-caption">
+                      <h2 data-swiper-parallax="-100%">
+                        SELAMAT PAGI,
+                        <h2 id="userFullName">PESERTA</h2>
+                      </h2>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-container-toolbar swiper-toolbar">
+                <div class="swiper-pagination-toolbar"></div>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide toolbar-icon">
+                    <a href="do-and-don't.html"><img src="images/icons/white/materi.png" alt=""
+                        title="" /><span>RULE ACARA</span></a>
+                    <a href="rundown.html"><img src="images/icons/white/categories.png" alt="" title="" /><span>RUNDOWN</span></a>
+                    <a href="bus-list.html"><img src="images/icons/white/bus.png" alt=""
+                      title="" /><span>DAFTAR BUS</span></a>
+                    <a href="team-list.html"><img src="images/icons/white/users.png" alt=""
+                      title="" /><span>DAFTAR KELOMPOK</span></a>
+                    <a href="no-kamar.html"><img src="images/icons/white/kamar.png" alt=""
+                      title="" /><span>DAFTAR KAMAR</span></a>
+                    <a href="explore.html"><img src="images/icons/white/map.png" alt="" title="" /><span>
+                      TEMPAT POPULER</span></a>
+                    <!-- <a href="lokasi-medis.html"><img src="images/icons/white/run.png" alt=""
+                        title="" /><span>INFORMASI MEDIS</span></a> -->
+                    <!-- <a href="healthy-corner.html"><img src="images/icons/white/favorites.png" alt=""
+                      title="" /><span>HEALTHY CORNER</span></a> -->
+                  </div>
+                  <!-- for 2nd page slide -->
+                  <!-- <div class="swiper-slide toolbar-icon2">
+
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login Popup -->
+    <!-- <div class="popup popup-login">
+      <a href="https://hadiahkugratis.com"><img src="images/Hadiahku.jpg" alt="hadiahkugratis.com"></a>
+      <div class="content-block">
+          <div class="close_popup_button">
+              <a href="#" class="close-popup" data-popup=".popup-login"><img src="images/icons/black/menu_close.png" alt="" title="" /></a>
+          </div>
+      </div>
+    </div> -->
+
+    <!-- Sticky Notification Bar -->
+    <!-- <div id="notification-bar" class="notification-bar">
+      <div class="container">
+        <p>
+          <strong>Dapatkan Free Gift untuk peserta</strong> 
+        </p>
+        <div class="buttons">
+          <button id="open-popup-btn" class="notification-btn">Learn More</button>
+          <span id="close-notification" class="close-btn">&times;</span>
+        </div>
+      </div>
+    </div> -->
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/jquery.custom.js"></script>
+
+    <script>
+      if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+        document.body.innerHTML = "<h1>Gunakan browser handphone anda untuk membuka situs ini.</h1>";
+      }
+      let userFullName = document.getElementById('userFullName');
+      
+      function logout() {
+        localStorage.clear();
+        setTimeout(window.location.replace('login.html'), 1000);
+      }
+    </script>
+</body>
+
+</html>

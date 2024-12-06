@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Schedule</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/style-room.css" />
+  <style>
+    .btn-menu {
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 2px solid #fff;
+      border-radius: 50px;
+      padding: 10px 20px;
+      margin: 10px 0;
+      width: 100%;
+      font-size: 18px;
+      transition: all 0.3s ease 0s;
+    }
+
+    .btn-menu:hover, .btn-menu:focus {
+      background-color: rgba(255, 255, 255, 0.3);
+      color: #fff;
+    }
+
+    .btn-back {
+      color: rgba(255,255,255,0.5);
+      background: transparent;
+      font-size: 16px;
+      text-transform: capitalize;
+      border: 2px solid #fff;
+      border-radius: 50px;
+      transition: all 0.3s ease 0s;
+      margin-bottom: 10px;
+    }
+
+    .btn-back:hover, .btn-back:focus {
+      color: #fff;
+      text-shadow: 3px 3px rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+        <div class="panel">
+          <div class="panel-heading">
+            <button class="btn btn-back" onclick="home()" title="Back">Back</button>
+            <h4>Daftar <span>Bus</span></h4>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-xs-12">
+                <button class="btn btn-menu" onclick="showList('departure')">Bus Kedatangan</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <button class="btn btn-menu" onclick="showList('return')">Bus Kepulangan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showList(type) {
+      if (type == 'departure') {
+        window.location.href = 'departure-bus.html';
+      }
+      if (type == 'return') {
+        window.location.href = 'return-bus.html';
+      }
+    }
+
+    function home() {
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+
+</html>
+
